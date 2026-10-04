@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Second Cup · Coffee &amp; Pastries</title>
+<meta name="description" content="Small-batch coffee and fresh cakes. Order ahead and skip the line.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Inter';font-weight:100 900;src:url(assets/Inter.woff2) format('woff2')}
+:root{--esp:#22140D;--esp2:#3A2418;--mocha:#7A5A47;--cara:#C8874A;--cara2:#E9B57E;--cream:#F6EEE3;--paper:#FBF7F1;--line:rgba(34,20,13,.12);--green:#3FA35F}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--esp);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
+.d{font-family:Fraunces,Georgia,serif;font-weight:700;letter-spacing:-.03em}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+
+/* nav */
+.nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1216px,calc(100% - 32px));height:66px;z-index:20;display:flex;align-items:center;gap:20px;
+  padding:0 10px 0 22px;border-radius:999px;background:rgba(251,247,241,.86);backdrop-filter:blur(18px) saturate(1.4);-webkit-backdrop-filter:blur(18px) saturate(1.4);
+  box-shadow:0 10px 30px -14px rgba(34,20,13,.35),inset 0 0 0 1px rgba(255,255,255,.6)}
+.brand{display:flex;align-items:center;gap:10px;font-size:23px;white-space:nowrap}
+.brand svg{width:34px;height:34px}
+.links{display:flex;gap:30px;margin:0 auto;font-size:15px;font-weight:500;color:var(--esp2)}
+.nav .act{display:flex;align-items:center;gap:8px;margin-left:auto}
+.links+.act{margin-left:0}
+.cart{position:relative;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#fff;box-shadow:inset 0 0 0 1px var(--line)}
+.cart svg{width:22px;height:22px}
+.badge{position:absolute;top:-3px;right:-3px;min-width:21px;height:21px;padding:0 5px;border-radius:999px;background:var(--cara);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center;transform:scale(0)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;font-weight:600;font-size:16px;white-space:nowrap}
+.btn.dark{background:var(--esp);color:var(--paper)}
+.btn.sm{height:46px;padding:0 20px;font-size:15px}
+.btn.light{background:var(--paper);color:var(--esp)}
+.btn.glass{background:rgba(255,255,255,.14);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.45);backdrop-filter:blur(10px)}
+.btn .ar{width:30px;height:30px;border-radius:50%;background:var(--esp);color:var(--paper);display:grid;place-items:center;margin-right:-14px}
+.burger{display:none;width:46px;height:46px;border-radius:50%;background:var(--esp);place-items:center}
+.burger i{display:block;width:18px;height:2px;background:var(--paper);box-shadow:0 6px 0 var(--paper),0 -6px 0 var(--paper)}
+
+/* hero */
+.hero{padding:12px}
+.hcard{position:relative;height:min(760px,94vh);min-height:560px;border-radius:34px;overflow:hidden;background:#1a0f0a}
+.hphoto{position:absolute;inset:0;background:url(assets/p-hero.jpg) 62% 50%/cover;transform-origin:60% 50%}
+.hcard::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,13,8,.86) 0%,rgba(22,13,8,.55) 38%,rgba(22,13,8,0) 66%),linear-gradient(0deg,rgba(22,13,8,.5),rgba(22,13,8,0) 40%)}
+.hcopy{position:absolute;left:56px;bottom:56px;z-index:2;color:#fff;max-width:820px}
+.hcopy .eyebrow{display:inline-flex;align-items:center;gap:10px;color:rgba(255,255,255,.82);margin-bottom:22px}
+.hcopy .eyebrow::before{content:'';width:28px;height:1.5px;background:var(--cara2)}
+.h1{font-size:112px;line-height:.92;color:#fff}
+.h1 .l{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+.h1 .l>span{display:inline-block}
+.h1 em{font-style:italic;font-weight:500;color:var(--cara2)}
+.hcopy p{font-size:19px;line-height:1.55;color:rgba(255,255,255,.84);max-width:440px;margin:26px 0 32px}
+.hbtns{display:flex;gap:12px}
+.open{position:absolute;right:28px;bottom:28px;z-index:2;display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:22px;color:#fff;
+  background:rgba(22,13,8,.42);backdrop-filter:blur(14px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.22)}
+.open b{display:block;font-size:16px}.open span{font-size:14px;color:rgba(255,255,255,.75)}
+.dot{width:11px;height:11px;border-radius:50%;background:var(--green);box-shadow:0 0 0 5px rgba(63,163,95,.25)}
+.seal{position:absolute;right:44px;top:108px;z-index:2;width:132px;height:132px}
+
+
+/* marquee */
+.marq{overflow:hidden;padding:30px 0 6px;white-space:nowrap}
+.marq .tr{display:inline-flex;gap:38px;font-size:46px;align-items:center}
+.marq em{font-style:italic;font-weight:500}
+.marq i{font-style:normal;color:var(--cara);font-size:30px}
+
+/* menu */
+.menu{padding:84px 0 40px}
+.mhead{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:36px}
+.mhead .eyebrow{color:var(--cara);margin-bottom:14px}
+.h2{font-size:68px;line-height:.96}
+.h2 em{font-style:italic;font-weight:500;color:var(--cara)}
+.chips{display:flex;gap:8px}
+.chips span{height:44px;padding:0 20px;border-radius:999px;display:grid;place-items:center;font-size:15px;font-weight:500;box-shadow:inset 0 0 0 1px var(--line)}
+.chips span.on{background:var(--esp);color:var(--paper);box-shadow:none}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.item{position:relative;border-radius:30px;background:#fff;padding:10px 10px 22px;box-shadow:0 18px 40px -26px rgba(34,20,13,.35),inset 0 0 0 1px rgba(34,20,13,.05)}
+.ph{position:relative;aspect-ratio:4/3.3;border-radius:22px;background:#e9dfd3 center/cover;overflow:hidden}
+.tag{position:absolute;left:14px;top:14px;padding:7px 12px;border-radius:999px;background:rgba(251,247,241,.92);font-size:12.5px;font-weight:600;letter-spacing:.04em}
+.irow{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:20px 12px 0}
+.irow h3{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.irow .pr{font-family:Fraunces,Georgia,serif;font-size:24px;font-weight:600}
+.item p{padding:8px 12px 0;color:var(--mocha);font-size:15px;line-height:1.5;max-width:300px}
+.add{position:absolute;right:22px;top:calc(min(100%,0px) + 0px);height:52px;min-width:52px;border-radius:999px;background:var(--esp);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:400;
+  box-shadow:0 10px 22px -10px rgba(34,20,13,.6),0 0 0 6px #fff;overflow:hidden;white-space:nowrap}
+.add .st{display:none;align-items:center;gap:18px;font-size:18px;font-weight:600;padding:0 18px}
+.add.on .pl{display:none}.add.on .st{display:flex}
+.fly{position:fixed;left:0;top:0;width:46px;height:46px;border-radius:50%;background:var(--esp) url(assets/p-iced.jpg) center/cover;box-shadow:0 0 0 3px #fff,0 12px 22px -8px rgba(0,0,0,.5);z-index:30;display:none}
+
+/* visit */
+.visit{padding:70px 0 90px}
+.vgrid{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:stretch}
+.vcopy{background:var(--cream);border-radius:32px;padding:44px}
+.vcopy .eyebrow{color:var(--cara);margin-bottom:14px}
+.hours{margin:30px 0 32px;border-top:1px solid var(--line)}
+.hours div{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-size:17px}
+.hours span{color:var(--mocha)}
+.map{position:relative;border-radius:32px;overflow:hidden;min-height:420px;background:#EDE3D4}
+.map svg.m{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:50%;top:47%;width:58px;height:74px;margin:-74px 0 0 -29px;transform-origin:50% 100%}
+.pinsh{position:absolute;left:50%;top:47%;width:44px;height:14px;margin:-7px 0 0 -22px;border-radius:50%;background:rgba(34,20,13,.28)}
+.mlabel{position:absolute;left:calc(50% + 40px);top:calc(47% - 92px);padding:12px 16px;border-radius:16px;background:#fff;box-shadow:0 14px 30px -14px rgba(34,20,13,.45);white-space:nowrap}
+.mlabel b{display:block;font-size:16px}.mlabel span{font-size:13.5px;color:var(--mocha);display:flex;align-items:center;gap:7px;margin-top:2px}
+.mlabel span i{width:8px;height:8px;border-radius:50%;background:var(--green)}
+
+/* footer */
+footer{background:var(--esp);color:var(--paper);border-radius:34px 34px 0 0;padding:56px 0 0;overflow:hidden}
+.frow{display:flex;justify-content:space-between;gap:30px;font-size:15px;color:rgba(251,247,241,.7)}
+.frow b{display:block;color:var(--paper);font-size:16px;margin-bottom:10px}
+.big{font-size:clamp(90px,15.5vw,230px);line-height:.8;letter-spacing:-.045em;margin-top:44px;white-space:nowrap;color:var(--cara2);transform:translateY(12%)}
+
+/* tablet */
+@media (max-width:980px){
+  .links{display:none}.nav .act{margin-left:auto}
+  .h1{font-size:84px}.hcopy{left:40px;bottom:44px}.h2{font-size:54px}
+  .grid{grid-template-columns:repeat(2,1fr)}.grid .item:nth-child(3){display:none}
+  .vgrid{grid-template-columns:1fr}.mhead{flex-direction:column;align-items:flex-start}
+  .seal{top:100px;right:32px;width:110px;height:110px}.seal svg{width:110px;height:110px}
+}
+/* phone */
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .nav{top:10px;height:58px;padding:0 6px 0 16px;width:calc(100% - 20px)}.brand{font-size:20px}.brand svg{width:30px;height:30px}
+  .nav .btn{display:none}.burger{display:grid}.cart{width:44px;height:44px}
+  .hero{padding:8px}.hcard{height:640px;min-height:0;border-radius:28px}
+  .hphoto{background-position:58% 50%}
+  .hcard::after{background:linear-gradient(0deg,rgba(22,13,8,.9) 0%,rgba(22,13,8,.55) 50%,rgba(22,13,8,.05) 80%)}
+  .hcopy{left:22px;right:22px;bottom:24px}.hcopy .eyebrow{font-size:11px;margin-bottom:14px}
+  .h1{font-size:54px}.hcopy p{font-size:16px;margin:16px 0 22px}
+  .hbtns{flex-direction:column}.hbtns .btn{width:100%}
+  .open,.seal{display:none}
+  .marq .tr{font-size:32px;gap:26px}.marq{padding:22px 0 0}
+  .menu{padding:54px 0 30px}.h2{font-size:42px}.chips{display:none}.mhead{margin-bottom:22px}
+  .grid{grid-template-columns:1fr;gap:16px}.grid .item:nth-child(3){display:grid}
+  .item{display:grid;grid-template-columns:118px 1fr;align-items:center;padding:10px;border-radius:24px}
+  .item .ph{aspect-ratio:1;border-radius:16px;grid-row:span 2}.tag{display:none}
+  .irow{padding:0 0 0 14px;flex-direction:column;gap:2px}.irow h3{font-size:18px}.irow .pr{font-size:19px}
+  .item p{display:none}
+  .add{top:auto !important;bottom:18px;right:16px;height:44px;min-width:44px;font-size:22px;box-shadow:none}
+  .add .st{gap:12px;font-size:16px;padding:0 14px}
+  .vcopy{padding:30px}.map{min-height:300px}
+  .frow{flex-direction:column;gap:18px}
+}
+/* wireframe skin, used by the showreel's "plan it" step */
+html.wire body{background:#fff}
+html.wire *{color:transparent !important;box-shadow:none !important;text-shadow:none !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important}
+html.wire .nav{background:#fff;box-shadow:inset 0 0 0 2px #E6E6E1 !important}
+html.wire .hcard,html.wire .ph,html.wire .map{background:#F1F1ED !important;outline:2px solid #D2D2CB;outline-offset:-2px}
+html.wire .hcard::after,html.wire .ph::after,html.wire .map::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(to top right,transparent calc(50% - 1.5px),#D2D2CB calc(50% - 1px),#D2D2CB calc(50% + 1px),transparent calc(50% + 1.5px)),
+             linear-gradient(to bottom right,transparent calc(50% - 1.5px),#D2D2CB calc(50% - 1px),#D2D2CB calc(50% + 1px),transparent calc(50% + 1.5px))}
+html.wire .hphoto,html.wire .map svg,html.wire .pin,html.wire .pinsh,html.wire .mlabel,html.wire .tag,html.wire .badge,html.wire .seal svg{visibility:hidden}
+html.wire .seal{border-radius:50%;outline:2px solid #D2D2CB}
+html.wire .tx{background:#E4E4DF;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+html.wire .btn,html.wire .cart,html.wire .chips span,html.wire .add,html.wire .open,html.wire .burger{background:#F1F1ED !important;outline:2px solid #D2D2CB;outline-offset:-2px}
+html.wire .burger i{background:transparent;box-shadow:none}
+html.wire .btn .ar{background:#E4E4DF !important}
+html.wire .item,html.wire .vcopy{background:#FAFAF8;outline:2px solid #E6E6E1;outline-offset:-2px}
+html.wire footer{background:#F6F6F3}
+html.wire .brand svg *{fill:#E4E4DF;stroke:#E4E4DF}
+html.wire .marq em,html.wire .marq span{background:#ECECE7;border-radius:8px}
+html.wire .hcopy .eyebrow::before,html.wire .dot{background:#E4E4DF}
+</style></head>
+<body>
+<nav class="nav">
+  <a class="brand d" href="#"><svg viewBox="0 0 40 40"><circle cx="24.5" cy="16.5" r="11" fill="#C8874A"/><circle cx="15.5" cy="23.5" r="10.5" fill="#FBF7F1" stroke="#22140D" stroke-width="4"/></svg><span class="tx">Second Cup</span></a>
+  <div class="links"><a href="#menu"><span class="tx">Menu</span></a><a href="#visit"><span class="tx">Our story</span></a><a href="#visit"><span class="tx">Visit</span></a></div>
+  <div class="act">
+    <button class="cart" id="cart" aria-label="Cart"><svg viewBox="0 0 24 24" fill="none" stroke="#22140D" stroke-width="1.9" stroke-linejoin="round"><path d="M4.5 8h15l-1.3 11.3a2 2 0 0 1-2 1.7H7.8a2 2 0 0 1-2-1.7z"/><path d="M8.5 8V6.8a3.5 3.5 0 0 1 7 0V8"/></svg><span class="badge" id="badge">0</span></button>
+    <a class="btn dark sm" href="#menu"><span class="tx">Order ahead</span></a>
+    <button class="burger" aria-label="Menu"><i></i></button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hcard" id="hcard">
+    <div class="hphoto" id="hphoto"></div>
+    <svg class="seal" viewBox="0 0 132 132"><defs><path id="sp" d="M66 66m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0"/></defs>
+      <circle cx="66" cy="66" r="65" fill="#FBF7F1"/>
+      <g class="spin" id="spin"><text font-family="Inter" font-weight="700" font-size="11" fill="#22140D"><textPath href="#sp" textLength="292" lengthAdjust="spacing">FRESHLY BREWED &#8226; ORDER AHEAD &#8226;</textPath></text></g>
+      <g transform="translate(48 48) scale(.9)"><circle cx="24.5" cy="16.5" r="11" fill="#C8874A"/><circle cx="15.5" cy="23.5" r="10.5" fill="#FBF7F1" stroke="#22140D" stroke-width="4"/></g></svg>
+    <div class="hcopy">
+      <div class="eyebrow"><span class="tx">Small-batch coffee &amp; fresh cakes</span></div>
+      <h1 class="h1 d" id="h1"><span class="l"><span class="tx">Coffee worth</span></span><span class="l"><span><em class="tx">a second cup.</em></span></span></h1>
+      <p><span class="tx">Fresh roasts, fresh cakes and a seat by the window. Order ahead and skip the line.</span></p>
+      <div class="hbtns"><a class="btn light" href="#menu"><span class="tx">Order ahead</span><span class="ar">&#8594;</span></a><a class="btn glass" href="#menu"><span class="tx">See the menu</span></a></div>
+    </div>
+    <div class="open" id="open"><span class="dot"></span><div><b class="tx">Open now</b><span class="tx">Until 9pm today</span></div></div>
+  </div>
+</header>
+
+<div class="marq d"><div class="tr" id="marq"></div></div>
+
+<section class="menu" id="menu"><div class="wrap">
+  <div class="mhead"><div><div class="eyebrow"><span class="tx">Today&#8217;s menu</span></div><h2 class="h2 d"><span class="tx">Made fresh,</span> <em class="tx">all day.</em></h2></div>
+    <div class="chips"><span class="on"><span class="tx">All</span></span><span><span class="tx">Coffee</span></span><span><span class="tx">Pastries</span></span></div></div>
+  <div class="grid">
+    <article class="item" id="item0"><div class="ph" style="background-image:url(assets/p-iced.jpg)"><span class="tag">Bestseller</span></div>
+      <div class="irow"><h3 class="tx">Iced Latte</h3><span class="pr tx">&#8369;140</span></div><p><span class="tx">Double espresso, cold milk, lots of ice.</span></p>
+      <button class="add" id="add0"><span class="pl">+</span><span class="st"><span>&#8722;</span><b id="q0">1</b><span id="plus0">+</span></span></button></article>
+    <article class="item"><div class="ph" style="background-image:url(assets/p-spanish.jpg)"><span class="tag">Sweet</span></div>
+      <div class="irow"><h3 class="tx">Spanish Latte</h3><span class="pr tx">&#8369;150</span></div><p><span class="tx">Espresso, milk and a little condensed milk.</span></p>
+      <button class="add"><span class="pl">+</span></button></article>
+    <article class="item"><div class="ph" style="background-image:url(assets/p-cheesecake.jpg)"><span class="tag">Baked daily</span></div>
+      <div class="irow"><h3 class="tx">Blueberry Cheesecake</h3><span class="pr tx">&#8369;180</span></div><p><span class="tx">Baked slow, then piled high with fresh blueberries.</span></p>
+      <button class="add"><span class="pl">+</span></button></article>
+  </div>
+</div></section>
+
+<section class="visit" id="visit"><div class="wrap"><div class="vgrid">
+  <div class="vcopy"><div class="eyebrow"><span class="tx">Visit</span></div><h2 class="h2 d"><span class="tx">Come say</span> <em class="tx">hi.</em></h2>
+    <div class="hours"><div><b class="tx">Mon&#8211;Fri</b><span class="tx">7am &#8211; 9pm</span></div><div><b class="tx">Sat&#8211;Sun</b><span class="tx">8am &#8211; 10pm</span></div><div><b class="tx">Wi-Fi</b><span class="tx">Fast, and free</span></div></div>
+    <a class="btn dark" href="#"><span class="tx">Get directions</span></a></div>
+  <div class="map" id="map">
+    <svg class="m" viewBox="0 0 700 460" preserveAspectRatio="xMidYMid slice">
+      <rect width="700" height="460" fill="#EDE3D4"/>
+      <path d="M-20 380C120 320 260 430 400 350S620 270 720 300" stroke="#CFE0E6" stroke-width="40" fill="none" stroke-linecap="round"/>
+      <rect x="40" y="40" width="190" height="140" rx="22" fill="#D5E3C6"/>
+      <g fill="#BCD2A9"><circle cx="85" cy="80" r="16"/><circle cx="135" cy="118" r="18"/><circle cx="185" cy="76" r="15"/><circle cx="104" cy="150" r="13"/><circle cx="200" cy="140" r="14"/></g>
+      <g fill="#E3D4BF"><rect x="280" y="40" width="150" height="110" rx="16"/><rect x="470" y="40" width="190" height="110" rx="16"/><rect x="280" y="200" width="150" height="90" rx="16"/><rect x="470" y="200" width="90" height="70" rx="16"/><rect x="590" y="200" width="70" height="70" rx="16"/><rect x="40" y="230" width="190" height="70" rx="16"/></g>
+      <g stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" fill="none"><path d="M-10 186H710"/><path d="M256 -10V470"/><path d="M450 -10V470"/></g>
+      <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none" opacity=".8"><path d="M-10 316H250"/><path d="M570 186V300"/></g>
+    </svg>
+    <div class="pinsh" id="pinsh"></div>
+    <svg class="pin" id="pin" viewBox="0 0 40 52"><path d="M20 1C9.5 1 1 9.5 1 20c0 15 19 31 19 31s19-16 19-31C39 9.5 30.5 1 20 1z" fill="#22140D"/><circle cx="20" cy="19.5" r="8" fill="#C8874A"/></svg>
+    <div class="mlabel" id="mlabel"><b>Second Cup</b><span><i></i>Open now</span></div>
+  </div>
+</div></div></section>
+
+<footer><div class="wrap">
+  <div class="frow"><div><b>Second Cup</b>Coffee &amp; pastries</div><div><b>Hours</b>Daily, 7am to 9pm</div><div><b>Say hi</b>hello@secondcup.example</div></div>
+  <div class="big d"><em>Second Cup</em></div>
+</div></footer>
+<div class="fly" id="fly0"></div><div class="fly" id="fly1"></div>
+
+<script>
+// marquee words
+const W = ['<em>Fresh roasts</em>', '<i>&#10022;</i>', '<span>Fresh cakes</span>', '<i>&#10022;</i>', '<em>Good chairs</em>', '<i>&#10022;</i>', '<span>Fast Wi-Fi</span>', '<i>&#10022;</i>'];
+document.getElementById('marq').innerHTML = W.concat(W, W).join('');
+// The site runs on its own; with ?video it hands its moving parts to the showreel, frame by frame.
+const $ = (id) => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const spring = (tau, f = 2.2, z = 0.5) => { if (tau <= 0) return 0; const w = 2 * Math.PI * f, wd = w * Math.sqrt(1 - z * z); return 1 - Math.exp(-z * w * tau) * (Math.cos(wd * tau) + ((z * w) / wd) * Math.sin(wd * tau)); };
+const VIDEO = location.search.includes('video');
+if (location.search.includes('wire')) document.documentElement.classList.add('wire');
+let qty = 0;
+function setCart(n) { const b = $('badge'); b.textContent = n; b.style.transform = `scale(${n ? 1 : 0})`; }
+function setQty(n) { const a = $('add0'); a.classList.toggle('on', n > 0); $('q0').textContent = n; }
+if (!VIDEO) {
+  // a live site: spin the seal, run the marquee, add to cart for real
+  let t0 = performance.now();
+  const tick = (t) => { const s = (t - t0) / 1000; $('spin').setAttribute('transform', `rotate(${s * 30} 66 66)`); $('marq').style.transform = `translateX(${-(s * 40) % 900}px)`; requestAnimationFrame(tick); };
+  requestAnimationFrame(tick);
+  $('add0').addEventListener('click', (e) => { if (e.target.id === 'plus0' || !qty) { qty++; setQty(qty); setCart(qty); } else if (e.target.textContent === '−') { qty--; setQty(qty); setCart(qty); } });
+  document.querySelectorAll('.add:not(#add0)').forEach((b) => b.addEventListener('click', () => { qty++; setCart(qty); }));
+}
+// showreel control: everything is set from the state each frame, nothing carries over
+window.SC = {
+  set(s) {
+    document.documentElement.style.scrollBehavior = 'auto';
+    window.scrollTo(0, s.scroll || 0);
+    $('spin').setAttribute('transform', `rotate(${(s.t || 0) * 30} 66 66)`);
+    $('marq').style.transform = `translateX(${-((s.t || 0) * 40) % 900}px)`;
+    const hk = s.h1 ?? 1;
+    document.querySelectorAll('.h1 .l>span').forEach((l, i) => { l.style.transform = `translateY(${(1 - cl(hk * 1.4 - i * 0.4)) ** 3 * 110}%)`; });
+    const pk = s.photo ?? 1;
+    $('hphoto').style.transform = `scale(${1 + 0.25 * (1 - pk)})`;
+    $('hcard').style.clipPath = s.drag == null ? '' : `inset(0 ${(1 - s.drag) * 100}% ${(1 - s.drag) * 100}% 0 round 34px)`;
+    setCart(s.cart || 0); setQty(s.qty || 0);
+    $('badge').style.transform = `scale(${s.cartPop ?? (s.cart ? 1 : 0)})`;
+    const lift = s.hover || 0; $('item0').style.transform = `translateY(${-10 * lift}px)`;
+    $('item0').style.boxShadow = `0 ${18 + 24 * lift}px ${40 + 20 * lift}px -26px rgba(34,20,13,${0.35 + 0.25 * lift}),inset 0 0 0 1px rgba(34,20,13,.05)`;
+    this.pop(s.pop);
+    const pin = s.pin ?? 1;
+    $('pin').style.transform = `translateY(${(1 - pin) * -180}px) scale(${1 + 0.12 * (s.squash || 0)},${1 - 0.12 * (s.squash || 0)})`;
+    $('pin').style.opacity = s.pin == null || s.pin > 0 ? 1 : 0;
+    $('pinsh').style.transform = `scale(${cl(pin)})`;
+    $('mlabel').style.transform = `scale(${s.label ?? 1})`; $('mlabel').style.transformOrigin = '0 100%';
+    ['fly0', 'fly1'].forEach((id, i) => {
+      const f = $(id), k = s.fly ? s.fly[i] : -1;
+      f.style.display = k > 0 && k < 1 ? 'block' : 'none';
+      if (!(k > 0 && k < 1)) return;
+      const a = $('add0').getBoundingClientRect(), c = $('cart').getBoundingClientRect();
+      const x0 = a.left + a.width / 2, y0 = a.top + a.height / 2, x1 = c.left + c.width / 2, y1 = c.top + c.height / 2;
+      const e = k < 0.5 ? 4 * k ** 3 : 1 - (-2 * k + 2) ** 3 / 2;
+      const x = x0 + (x1 - x0) * e, y = y0 + (y1 - y0) * e - Math.sin(Math.PI * e) * 160;
+      f.style.transform = `translate(${x - 23}px,${y - 23}px) scale(${1.1 - 0.6 * e})`;
+    });
+  },
+  // wireframe blocks pop in one after another (used by the "plan it" step)
+  pop(t) {
+    if (!this.pops) this.pops = [...document.querySelectorAll('.nav, .brand, .links a, .cart, .nav .btn, .burger, .hcopy .eyebrow, .h1 .l, .hcopy p, .hbtns .btn, .open, .seal, .marq, .mhead .eyebrow, .mhead .h2, .chips span, .item, .vcopy, .map')];
+    this.pops.forEach((e, i) => {
+      const k = t == null ? 1 : spring(t - i * 0.045, 2.6, 0.55);
+      e.style.opacity = t == null ? '' : cl(k * 1.6);
+      e.style.scale = t == null ? '' : 0.85 + 0.15 * cl(k, 0, 1.15);
+    });
+  },
+  rect(sel) { const e = document.querySelector(sel); if (!e) return null; const r = e.getBoundingClientRect(); return { x: r.left, y: r.top, w: r.width, h: r.height }; },
+  top(sel) { const e = document.querySelector(sel); return e ? e.getBoundingClientRect().top + window.scrollY : 0; },
+};
+if (VIDEO) SC.set({});
+</script>
+</body></html>
