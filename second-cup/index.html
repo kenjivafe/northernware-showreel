@@ -97,10 +97,10 @@ button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 .hours div{display:flex;justify-content:space-between;padding:16px 0;border-bottom:1px solid var(--line);font-size:17px}
 .hours span{color:var(--mocha)}
 .map{position:relative;border-radius:32px;overflow:hidden;min-height:420px;background:#EDE3D4}
-.map svg.m{position:absolute;inset:0;width:100%;height:100%}
-.pin{position:absolute;left:50%;top:47%;width:58px;height:74px;margin:-74px 0 0 -29px;transform-origin:50% 100%}
-.pinsh{position:absolute;left:50%;top:47%;width:44px;height:14px;margin:-7px 0 0 -22px;border-radius:50%;background:rgba(34,20,13,.28)}
-.mlabel{position:absolute;left:calc(50% + 40px);top:calc(47% - 92px);padding:12px 16px;border-radius:16px;background:#fff;box-shadow:0 14px 30px -14px rgba(34,20,13,.45);white-space:nowrap}
+.map .m{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pin{position:absolute;left:50%;top:50%;width:58px;height:74px;margin:-74px 0 0 -29px;transform-origin:50% 100%}
+.pinsh{position:absolute;left:50%;top:50%;width:44px;height:14px;margin:-7px 0 0 -22px;border-radius:50%;background:rgba(34,20,13,.28)}
+.mlabel{position:absolute;left:calc(50% + 40px);top:calc(50% - 92px);padding:12px 16px;border-radius:16px;background:#fff;box-shadow:0 14px 30px -14px rgba(34,20,13,.45);white-space:nowrap}
 .mlabel b{display:block;font-size:16px}.mlabel span{font-size:13.5px;color:var(--mocha);display:flex;align-items:center;gap:7px;margin-top:2px}
 .mlabel span i{width:8px;height:8px;border-radius:50%;background:var(--green)}
 
@@ -150,7 +150,7 @@ html.wire .hcard,html.wire .ph,html.wire .map{background:#F1F1ED !important;outl
 html.wire .hcard::after,html.wire .ph::after,html.wire .map::after{content:'';position:absolute;inset:0;
   background:linear-gradient(to top right,transparent calc(50% - 1.5px),#D2D2CB calc(50% - 1px),#D2D2CB calc(50% + 1px),transparent calc(50% + 1.5px)),
              linear-gradient(to bottom right,transparent calc(50% - 1.5px),#D2D2CB calc(50% - 1px),#D2D2CB calc(50% + 1px),transparent calc(50% + 1.5px))}
-html.wire .hphoto,html.wire .map svg,html.wire .pin,html.wire .pinsh,html.wire .mlabel,html.wire .tag,html.wire .badge,html.wire .seal svg{visibility:hidden}
+html.wire .hphoto,html.wire .map .m,html.wire .pin,html.wire .pinsh,html.wire .mlabel,html.wire .tag,html.wire .badge,html.wire .seal svg{visibility:hidden}
 html.wire .seal{border-radius:50%;outline:2px solid #D2D2CB}
 html.wire .tx{background:#E4E4DF;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 html.wire .btn,html.wire .cart,html.wire .chips span,html.wire .add,html.wire .open,html.wire .burger{background:#F1F1ED !important;outline:2px solid #D2D2CB;outline-offset:-2px}
@@ -213,15 +213,7 @@ html.wire .hcopy .eyebrow::before,html.wire .dot{background:#E4E4DF}
     <div class="hours"><div><b class="tx">Mon&#8211;Fri</b><span class="tx">7am &#8211; 9pm</span></div><div><b class="tx">Sat&#8211;Sun</b><span class="tx">8am &#8211; 10pm</span></div><div><b class="tx">Wi-Fi</b><span class="tx">Fast, and free</span></div></div>
     <a class="btn dark" href="#"><span class="tx">Get directions</span></a></div>
   <div class="map" id="map">
-    <svg class="m" viewBox="0 0 700 460" preserveAspectRatio="xMidYMid slice">
-      <rect width="700" height="460" fill="#EDE3D4"/>
-      <path d="M-20 380C120 320 260 430 400 350S620 270 720 300" stroke="#CFE0E6" stroke-width="40" fill="none" stroke-linecap="round"/>
-      <rect x="40" y="40" width="190" height="140" rx="22" fill="#D5E3C6"/>
-      <g fill="#BCD2A9"><circle cx="85" cy="80" r="16"/><circle cx="135" cy="118" r="18"/><circle cx="185" cy="76" r="15"/><circle cx="104" cy="150" r="13"/><circle cx="200" cy="140" r="14"/></g>
-      <g fill="#E3D4BF"><rect x="280" y="40" width="150" height="110" rx="16"/><rect x="470" y="40" width="190" height="110" rx="16"/><rect x="280" y="200" width="150" height="90" rx="16"/><rect x="470" y="200" width="90" height="70" rx="16"/><rect x="590" y="200" width="70" height="70" rx="16"/><rect x="40" y="230" width="190" height="70" rx="16"/></g>
-      <g stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" fill="none"><path d="M-10 186H710"/><path d="M256 -10V470"/><path d="M450 -10V470"/></g>
-      <g stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" fill="none" opacity=".8"><path d="M-10 316H250"/><path d="M570 186V300"/></g>
-    </svg>
+    <img class="m" src="assets/map.svg" alt="Map: Second Cup, off Session Road">
     <div class="pinsh" id="pinsh"></div>
     <svg class="pin" id="pin" viewBox="0 0 40 52"><path d="M20 1C9.5 1 1 9.5 1 20c0 15 19 31 19 31s19-16 19-31C39 9.5 30.5 1 20 1z" fill="#22140D"/><circle cx="20" cy="19.5" r="8" fill="#C8874A"/></svg>
     <div class="mlabel" id="mlabel"><b>Second Cup</b><span><i></i>Open now</span></div>
