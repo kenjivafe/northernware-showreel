@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Smile Studio · Gentle dental care</title>
+<meta name="description" content="Gentle dental care for the whole family. Clear prices, booked online in two taps.">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root{--ink:#0E2A30;--teal:#167C7B;--teal2:#0F6463;--mint:#D8F2EB;--bg:#F5F9F8;--line:rgba(14,42,48,.1);--mut:#56737A;--ok:#1FB88F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+nav{display:flex;align-items:center;gap:30px;height:96px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:22px;letter-spacing:-.03em}
+.logo i{width:38px;height:38px;border-radius:13px;background:var(--teal);display:grid;place-items:center}
+.logo svg{width:22px;height:22px}
+.links{display:flex;gap:30px;margin-left:auto;font-weight:600;font-size:15px;color:var(--mut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:54px;padding:0 26px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap}
+.btn.p{background:var(--teal);color:#fff}
+.btn.s{background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.sm{height:48px;padding:0 22px;font-size:15px}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:16px 0 70px}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:9px 15px;border-radius:999px;background:var(--mint);color:var(--teal2);font-weight:700;font-size:13.5px}
+.pill b{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px rgba(31,184,143,.2)}
+h1{font-size:76px;line-height:1;letter-spacing:-.035em;font-weight:800;margin:24px 0 22px}
+h1 em{font-style:normal;color:var(--teal)}
+.pu{margin-left:-.12em}
+.lead{font-size:19px;line-height:1.6;color:var(--mut);max-width:470px}
+.cta{display:flex;gap:12px;margin-top:34px}
+.feats{display:flex;gap:24px;margin-top:38px;font-size:14.5px;font-weight:600;color:var(--mut)}
+.feats span{display:flex;align-items:center;gap:8px}
+.feats i{width:20px;height:20px;border-radius:50%;background:var(--mint);display:grid;place-items:center}
+.feats i::after{content:'';width:8px;height:4px;border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg) translate(1px,-1px)}
+.photo{position:relative;height:580px;border-radius:36px;background:url(../img/sm-hero.jpg) 46% 40%/cover}
+.book{position:absolute;left:-104px;top:300px;width:330px;background:#fff;border-radius:26px;padding:22px 22px 20px;box-shadow:0 34px 70px -26px rgba(14,42,48,.42),0 0 0 1px rgba(14,42,48,.04)}
+.bh{display:flex;justify-content:space-between;align-items:center}
+.book h3{font-size:17px;font-weight:800;letter-spacing:-.02em}
+.book .sub{font-size:13px;color:var(--mut);margin-top:3px}
+.av{width:40px;height:40px;border-radius:50%;background:url(../img/sm-clean.jpg) 40% 30%/cover;box-shadow:0 0 0 3px var(--mint)}
+.days{display:flex;gap:7px;margin:18px 0 12px}
+.days span{flex:1;padding:8px 0 9px;border-radius:13px;text-align:center;font-size:11.5px;font-weight:700;color:var(--mut);box-shadow:inset 0 0 0 1px var(--line);text-transform:uppercase;letter-spacing:.04em}
+.days span b{display:block;font-size:18px;color:var(--ink);letter-spacing:-.02em;margin-top:2px}
+.days span.on{background:var(--ink);color:#9FC3C8;box-shadow:none}.days span.on b{color:#fff}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}
+.slots span{padding:11px 0;border-radius:11px;text-align:center;font-size:13.5px;font-weight:700;background:var(--bg)}
+.slots span.on{background:var(--teal);color:#fff}
+.slots span.x{color:#B5C5C8;text-decoration:line-through}
+.go{margin-top:14px;width:100%;height:52px;border-radius:15px;background:var(--ink);color:#fff;font-weight:800;font-size:15.5px;display:flex;align-items:center;justify-content:center;gap:9px;overflow:hidden;position:relative}
+.go .a,.go .b{display:flex;align-items:center;gap:9px}
+.go .b{position:absolute;inset:0;justify-content:center;background:var(--ok);transform:translateY(100%)}
+.go .b i{width:20px;height:20px;border-radius:50%;background:#fff;display:grid;place-items:center}
+.go .b i::after{content:'';width:8px;height:4px;border-left:2.5px solid var(--ok);border-bottom:2.5px solid var(--ok);transform:rotate(-45deg) translate(1px,-1px)}
+.badge{position:absolute;right:22px;top:22px;padding:12px 16px;border-radius:18px;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px}
+.badge b{font-size:22px;letter-spacing:-.03em}
+section{padding:80px 0}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+h2{font-size:52px;letter-spacing:-.045em;line-height:1.04;font-weight:800;margin-top:12px}
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.card{background:#fff;border-radius:28px;padding:12px 12px 26px;box-shadow:0 16px 40px -28px rgba(14,42,48,.4)}
+.card .ph{height:230px;border-radius:20px;background:center/cover}
+.card h3{font-size:21px;letter-spacing:-.03em;margin:20px 12px 6px}
+.card p{font-size:15px;line-height:1.55;color:var(--mut);margin:0 12px}
+.card .pr{margin:14px 12px 0;font-weight:800;color:var(--teal)}
+footer{background:var(--ink);color:#C9DCDF;padding:48px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between}
+footer b{color:#fff}
+@media (max-width:980px){
+  .links{display:none}.hero{grid-template-columns:1fr;gap:30px}h1{font-size:60px}.svc{grid-template-columns:1fr 1fr}
+  .photo{height:460px}.book{left:-24px;top:40px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}nav{height:74px}nav .btn{display:none}.logo{font-size:20px}
+  .hero{padding:4px 0 40px;gap:22px}h1{font-size:44px;margin:16px 0 14px}.lead{font-size:16px}
+  .cta{flex-direction:column;margin-top:22px}.cta .btn{width:100%}.feats{display:none}
+  .photo{height:300px;border-radius:26px}.badge{display:none}
+  .photo{margin-bottom:190px}.book{left:14px;right:14px;top:auto;bottom:-200px;width:auto}
+  section{padding:50px 0}h2{font-size:36px}.svc{grid-template-columns:1fr;gap:16px}.card .ph{height:190px}
+  footer .wrap{flex-direction:column;gap:12px}
+}
+</style></head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#"><i><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M5 10c2.2 4.6 11.8 4.6 14 0"/><path d="M7.5 7.5v.01M16.5 7.5v.01"/></svg></i>Smile Studio</a>
+    <div class="links"><a href="#services">Services</a><a href="#services">Our dentists</a><a href="#services">Prices</a><a href="#contact">Contact</a></div>
+    <a class="btn p sm" href="#book">Book an appointment</a>
+  </nav>
+  <header class="hero">
+    <div>
+      <span class="pill"><b></b>Booking this week &#183; Mon&#8211;Sat</span>
+      <h1>Gentle dental care<span class="pu">,</span> <em>booked in two taps<span class="pu">.</span></em></h1>
+      <p class="lead">Cleanings, braces and check-ups for the whole family, with clear prices before we start.</p>
+      <div class="cta"><a class="btn p" href="#book" id="heroBook">Book an appointment</a><a class="btn s" href="#services">See prices</a></div>
+      <div class="feats"><span><i></i>Clear prices</span><span><i></i>Kid-friendly</span><span><i></i>Same-week visits</span></div>
+    </div>
+    <div class="photo">
+      <div class="badge"><b>8&#8211;6</b>open<br>today</div>
+      <div class="book" id="book">
+        <div class="bh"><div><h3>Book a visit</h3><div class="sub">Cleaning &#183; 45 minutes</div></div><span class="av"></span></div>
+        <div class="days" id="days"><span>Mon<b>12</b></span><span class="on">Tue<b>13</b></span><span>Wed<b>14</b></span><span>Thu<b>15</b></span><span>Fri<b>16</b></span></div>
+        <div class="slots" id="slots"><span class="x">9:00</span><span>10:30</span><span>1:00</span><span>3:30</span></div>
+        <button class="go" id="go"><span class="a">Book now &#8594;</span><span class="b"><i></i>Booked &#183; Tue 10:30</span></button>
+      </div>
+    </div>
+  </header>
+</div>
+<section id="services"><div class="wrap">
+  <div class="eyebrow">What we do</div><h2>Everything your smile needs.</h2>
+  <div class="svc">
+    <div class="card"><div class="ph" style="background-image:url(../img/sm-clean.jpg)"></div><h3>Cleanings</h3><p>A gentle, thorough clean and a check-up, every six months.</p><div class="pr">From &#8369;1,200</div></div>
+    <div class="card"><div class="ph" style="background-image:url(../img/sm-kids.jpg)"></div><h3>Kids&#8217; visits</h3><p>Patient dentists and short, calm visits for little ones.</p><div class="pr">From &#8369;900</div></div>
+    <div class="card"><div class="ph" style="background-image:url(../img/sm-room.jpg)"></div><h3>Braces &amp; aligners</h3><p>A clear plan and a clear price before anything starts.</p><div class="pr">Free consultation</div></div>
+  </div>
+</div></section>
+<footer id="contact"><div class="wrap"><div><b>Smile Studio</b><br>Gentle dental care</div><div><b>Hours</b><br>Mon&#8211;Sat, 8am to 6pm</div><div><b>Say hi</b><br>hello@smilestudio.example</div></div></footer>
+<script src="../sc.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+let picked = -1, booked = false;
+function paint(slot, done, press) {
+  [...$('slots').children].forEach((e, i) => e.classList.toggle('on', i === slot));
+  $('go').querySelector('.b').style.transform = `translateY(${(1 - done) * 100}%)`;
+  $('go').style.transform = `scale(${1 - 0.04 * (press || 0)})`;
+}
+// showreel: slot = picked slot index, done = 0..1 booked
+window.act = (s) => { if (s.live) return; paint(s.slot ?? -1, s.done || 0, s.press); };
+if (!VIDEO) {
+  [...$('slots').children].forEach((e, i) => e.addEventListener('click', () => { if (e.classList.contains('x')) return; picked = i; paint(picked, booked ? 1 : 0); }));
+  $('go').addEventListener('click', () => { if (picked < 0) picked = 1; booked = true; paint(picked, 1); });
+}
+</script>
+</body></html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rep Room · Small classes, real coaches</title>
+<meta name="description" content="Strength, conditioning and boxing in small classes. Book a class online.">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root{--bk:#0A0A0B;--card:#151518;--line:rgba(255,255,255,.09);--lime:#C8FF3D;--mut:#9A9AA2;--tx:#F3F3F1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bk);color:var(--tx);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.d{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-weight:400;letter-spacing:.005em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+nav{position:absolute;left:0;right:0;top:0;z-index:5}
+nav .wrap{display:flex;align-items:center;gap:30px;height:96px}
+.logo{display:flex;align-items:center;gap:10px;font-size:30px}
+.logo i{width:14px;height:30px;background:var(--lime);transform:skewX(-12deg)}
+.links{display:flex;gap:32px;margin-left:auto;font-weight:600;font-size:15px;color:#cfcfcf}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;font-weight:800;font-size:15px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;border-radius:4px}
+.btn.l{background:var(--lime);color:#0A0A0B}
+.btn.o{box-shadow:inset 0 0 0 2px rgba(255,255,255,.5);color:#fff}
+.btn.sm{height:46px;padding:0 20px;font-size:13px}
+.hero{position:relative;height:800px;overflow:hidden}
+.hero .ph{position:absolute;inset:0;background:url(../img/rr-hero.jpg) 50% 60%/cover;filter:grayscale(.15) contrast(1.08)}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,11,.55),rgba(10,10,11,.15) 35%,rgba(10,10,11,.92) 88%),linear-gradient(90deg,rgba(10,10,11,.7),rgba(10,10,11,0) 60%)}
+.hcopy{position:absolute;left:0;right:0;bottom:70px;z-index:2}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:800;letter-spacing:.2em;color:var(--lime);text-transform:uppercase}
+.eyebrow::before{content:'';width:34px;height:2px;background:var(--lime)}
+h1{font-size:150px;line-height:.86;margin:22px 0 26px}
+h1 em{font-style:normal;color:var(--lime)}
+.hrow{display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.lead{font-size:19px;line-height:1.55;color:#d2d2d0;max-width:440px}
+.cta{display:flex;gap:12px;margin-top:28px}
+.next{width:330px;padding:20px 22px;background:rgba(21,21,24,.82);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:6px}
+.next small{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.16em;color:var(--mut);text-transform:uppercase}
+.next small b{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(200,255,61,.2)}
+.next .d{font-size:34px;margin-top:10px}
+.next p{color:var(--mut);font-size:14px;margin-top:4px}
+section{padding:90px 0}
+.shead{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:34px}
+h2{font-size:84px;line-height:.9}
+h2 em{font-style:normal;color:var(--lime)}
+.tabs{display:flex;gap:6px}
+.tabs span{padding:12px 18px;font-size:13px;font-weight:800;letter-spacing:.1em;color:var(--mut);border:1px solid var(--line);border-radius:4px}
+.tabs span.on{background:#fff;color:#000;border-color:#fff}
+.sched{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.col h4{font-size:13px;font-weight:800;letter-spacing:.16em;color:var(--mut);padding:0 4px 12px;border-bottom:1px solid var(--line);margin-bottom:12px}
+.cl{position:relative;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:16px 16px 14px;margin-bottom:10px;overflow:hidden}
+.cl .tm{font-size:13px;font-weight:700;color:var(--mut)}
+.cl .nm{font-family:Anton,Impact,sans-serif;text-transform:uppercase;font-size:26px;margin:6px 0 2px}
+.cl .co{font-size:13px;color:var(--mut)}
+.cl .bk{margin-top:12px;height:38px;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;letter-spacing:.12em;background:rgba(255,255,255,.07);position:relative;overflow:hidden}
+.cl .bk .y{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--lime);color:#000;transform:translateY(100%)}
+.cl.hot{border-color:rgba(200,255,61,.5)}
+.cl .sp{position:absolute;right:14px;top:14px;font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--lime)}
+.coach{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.coach div{height:360px;border-radius:6px;background:center/cover;position:relative;overflow:hidden}
+.coach div::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 55%)}
+.coach span{position:absolute;left:22px;bottom:20px;z-index:2;font-family:Anton,Impact,sans-serif;font-size:34px;text-transform:uppercase}
+footer{border-top:1px solid var(--line);padding:44px 0;color:var(--mut);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between}
+@media (max-width:980px){.links{display:none}h1{font-size:110px}.next{display:none}.sched{grid-template-columns:repeat(3,1fr)}.sched .col:nth-child(n+4){display:none}h2{font-size:64px}}
+@media (max-width:560px){
+  .wrap{padding:0 18px}nav .wrap{height:76px}nav .btn{height:42px;padding:0 16px;font-size:12px}.logo{font-size:26px}
+  .hero{height:680px}h1{font-size:76px}.lead{font-size:16px}.cta{flex-direction:column}.cta .btn{width:100%}.hcopy{bottom:34px}
+  section{padding:56px 0}.shead{flex-direction:column;align-items:flex-start;gap:16px}h2{font-size:52px}.tabs{display:none}
+  .sched{grid-template-columns:1fr}.sched .col:nth-child(n+2){display:none}.coach{grid-template-columns:1fr}.coach div{height:260px}
+  footer .wrap{flex-direction:column;gap:10px}
+}
+</style></head>
+<body>
+<nav><div class="wrap"><a class="logo d" href="#"><i></i>Rep Room</a><div class="links"><a href="#classes">Classes</a><a href="#coaches">Coaches</a><a href="#classes">Pricing</a></div><a class="btn l sm" href="#classes">Join now</a></div></nav>
+<header class="hero"><div class="ph"></div>
+  <div class="hcopy"><div class="wrap">
+    <div class="eyebrow">Open 5am &#8211; 11pm &#183; Small classes</div>
+    <h1 class="d">Stronger<br><em>every week.</em></h1>
+    <div class="hrow"><div><p class="lead">Small classes, real coaches and a plan that fits your week. No contracts, cancel anytime.</p>
+      <div class="cta"><a class="btn l" href="#classes">Book a class</a><a class="btn o" href="#classes">See the schedule</a></div></div>
+      <div class="next"><small><b></b>Next class</small><div class="d">Strength &#183; 6:00 PM</div><p>Coach Mia &#183; 4 spots left</p></div></div>
+  </div></div>
+</header>
+<section id="classes"><div class="wrap">
+  <div class="shead"><h2 class="d">This week&#8217;s<br><em>classes.</em></h2><div class="tabs"><span class="on">All</span><span>Strength</span><span>Cardio</span><span>Boxing</span></div></div>
+  <div class="sched" id="sched"></div>
+</div></section>
+<section id="coaches" style="padding-top:20px"><div class="wrap"><div class="coach">
+  <div style="background-image:url(../img/rr-legs.jpg)"><span>Strength</span></div><div style="background-image:url(../img/rr-mirror.jpg)"><span>Conditioning</span></div><div style="background-image:url(../img/rr-floor.jpg)"><span>Open gym</span></div>
+</div></div></section>
+<footer><div class="wrap"><div>Rep Room</div><div>Open daily, 5am to 11pm</div><div>hello@reproom.example</div></div></footer>
+<script src="../sc.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+const CL = [[['6:00 AM', 'Strength', 'Coach Mia', 6], ['12:00 PM', 'Mobility', 'Coach Ren', 9], ['6:00 PM', 'Boxing', 'Coach Jay', 2]],
+  [['6:00 AM', 'HIIT', 'Coach Ren', 5], ['12:00 PM', 'Core', 'Coach Ana', 8], ['6:00 PM', 'Strength', 'Coach Mia', 4]],
+  [['6:00 AM', 'Strength', 'Coach Mia', 7], ['12:00 PM', 'Boxing', 'Coach Jay', 3], ['6:00 PM', 'HIIT', 'Coach Ren', 6]],
+  [['6:00 AM', 'Mobility', 'Coach Ana', 9], ['12:00 PM', 'Strength', 'Coach Mia', 5], ['6:00 PM', 'Boxing', 'Coach Jay', 1]],
+  [['6:00 AM', 'HIIT', 'Coach Ren', 4], ['12:00 PM', 'Core', 'Coach Ana', 7], ['6:00 PM', 'Strength', 'Coach Mia', 3]]];
+$('sched').innerHTML = DAYS.map((d, i) => `<div class="col"><h4>${d}</h4>${CL[i].map(([tm, nm, co, sp], j) =>
+  `<div class="cl${i === 1 && j === 2 ? ' hot' : ''}" ${i === 1 && j === 2 ? 'id="target"' : ''}><span class="sp">${sp} SPOTS</span><div class="tm">${tm}</div><div class="nm">${nm}</div><div class="co">${co}</div><div class="bk">BOOK<span class="y">BOOKED &#10003;</span></div></div>`).join('')}</div>`).join('');
+const cells = [...document.querySelectorAll('.cl')];
+// showreel: fill = schedule appearing (seconds since start), done = 0..1 booked
+window.act = (s) => {
+  if (s.live) return;
+  cells.forEach((c, i) => {
+    const k = s.fill == null ? 1 : spring(s.fill - i * 0.03, 2.6, 0.6);
+    c.style.opacity = cl(k * 1.4); c.style.transform = `translateY(${(1 - cl(k, 0, 1.1)) * 18}px)`;
+  });
+  const y = $('target').querySelector('.y'); y.style.transform = `translateY(${(1 - (s.done || 0)) * 100}%)`;
+  $('target').style.transform = `scale(${1 - 0.03 * (s.press || 0)})`;
+};
+if (!VIDEO) document.querySelectorAll('.cl .bk').forEach((b) => b.addEventListener('click', () => (b.querySelector('.y').style.transform = 'translateY(0)')));
+</script>
+</body></html>

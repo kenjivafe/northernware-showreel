@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sabaw &amp; Co. · Filipino soup house</title>
+<meta name="description" content="Sinigang, mami and more, simmered all morning. Order for pickup or delivery.">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root{--cream:#F5EEE2;--paper:#FBF7F0;--green:#173323;--tom:#D2461C;--ink:#1D1A15;--mut:#776E60;--line:rgba(29,26,21,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.f{font-family:Fraunces,Georgia,serif;letter-spacing:-.03em}
+.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+nav{display:flex;align-items:center;gap:30px;height:96px}
+.logo{font-size:28px;font-weight:700;font-style:italic}
+.logo b{color:var(--tom);font-style:normal}
+.links{display:flex;gap:30px;margin-left:auto;font-weight:500;font-size:15px;color:var(--mut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;border-radius:999px;font-weight:700;font-size:16px;white-space:nowrap}
+.btn.t{background:var(--tom);color:#fff}
+.btn.g{background:var(--green);color:var(--cream)}
+.btn.o{box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.sm{height:48px;padding:0 22px;font-size:15px}
+.hero{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center;padding:6px 0 80px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tom)}
+h1{font-size:104px;line-height:.94;font-weight:700;margin:20px 0 24px}
+h1 em{font-weight:500;color:var(--green)}
+.lead{font-size:19px;line-height:1.6;color:var(--mut);max-width:450px}
+.cta{display:flex;gap:12px;margin-top:34px}
+.info{display:flex;gap:26px;margin-top:40px;font-size:14px;color:var(--mut)}
+.info b{display:block;color:var(--ink);font-size:15px}
+.photo{position:relative;height:610px;border-radius:300px 300px 30px 30px;background:url(../img/sb-hero.jpg) 50% 45%/cover}
+.stamp{position:absolute;left:-46px;top:90px;width:132px;height:132px;border-radius:50%;background:var(--tom);color:#fff;display:grid;place-items:center;text-align:center;font-family:Fraunces,serif;font-style:italic;font-size:21px;line-height:1.05;transform:rotate(-10deg);box-shadow:0 20px 40px -18px rgba(210,70,28,.7)}
+section{padding:90px 0}
+.mh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px}
+h2{font-size:64px;line-height:1;font-weight:700}
+h2 em{font-weight:500;color:var(--tom)}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.dish{background:#fff;border-radius:28px;padding:12px 12px 22px;box-shadow:0 18px 44px -30px rgba(29,26,21,.45)}
+.dish .ph{height:250px;border-radius:20px;background:center/cover}
+.dish .row{display:flex;justify-content:space-between;align-items:baseline;margin:20px 12px 6px}
+.dish h3{font-family:Fraunces,serif;font-size:26px;font-weight:600;letter-spacing:-.02em}
+.dish .pr{font-weight:700;font-size:17px}
+.dish p{font-size:15px;line-height:1.5;color:var(--mut);margin:0 12px}
+.dish .add{margin:18px 12px 0;height:46px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;box-shadow:inset 0 0 0 1.5px var(--line);position:relative;overflow:hidden}
+.dish .add .y{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:var(--green);color:var(--cream);transform:translateY(100%)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.story .ph{height:420px;border-radius:30px;background:url(../img/sb-kitchen.jpg) center/cover}
+.story p{font-size:18px;line-height:1.65;color:var(--mut);margin-top:18px}
+.cart{position:fixed;right:28px;bottom:28px;z-index:9;display:flex;align-items:center;gap:16px;padding:10px 10px 10px 22px;border-radius:999px;background:var(--green);color:var(--cream);box-shadow:0 24px 50px -18px rgba(23,51,35,.7);transform:translateY(160%)}
+.cart:not(.on){visibility:hidden}
+.cart span{font-size:15px}.cart span b{font-size:16px}
+.cart .go{height:48px;padding:0 22px;border-radius:999px;background:var(--tom);color:#fff;font-weight:800;display:flex;align-items:center;position:relative;overflow:hidden;white-space:nowrap}
+.cart .go .y{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;color:var(--green);transform:translateY(100%)}
+footer{background:var(--green);color:#cbd3c5;padding:46px 0;font-size:15px}
+footer .wrap{display:flex;justify-content:space-between}
+footer b{color:#fff}
+@media (max-width:980px){.links{display:none}.hero{grid-template-columns:1fr}.photo{height:480px}h1{font-size:84px}.menu{grid-template-columns:1fr 1fr}.story{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .wrap{padding:0 18px}nav{height:74px}nav .btn{height:42px;padding:0 16px;font-size:14px}.logo{font-size:24px}
+  .hero{gap:26px;padding-bottom:50px}h1{font-size:56px}.lead{font-size:16px}.cta{flex-direction:column}.cta .btn{width:100%}.info{display:none}
+  .photo{height:360px;border-radius:200px 200px 24px 24px}.stamp{left:auto;right:12px;top:auto;bottom:-24px;width:104px;height:104px;font-size:17px}
+  section{padding:56px 0}.mh{flex-direction:column;align-items:flex-start;gap:14px}h2{font-size:42px}.menu{grid-template-columns:1fr}.dish .ph{height:200px}
+  .cart{left:14px;right:14px;bottom:14px}footer .wrap{flex-direction:column;gap:10px}
+}
+</style></head>
+<body>
+<div class="wrap">
+  <nav><a class="logo f" href="#">Sabaw <b>&amp;</b> Co.</a><div class="links"><a href="#menu">Menu</a><a href="#story">Our story</a><a href="#story">Find us</a></div><a class="btn t sm" href="#menu">Order now</a></nav>
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Filipino soup house</div>
+      <h1 class="f">Warm bowls, <em>made slow.</em></h1>
+      <p class="lead">Sinigang, mami and more, simmered all morning. Order for pickup or delivery.</p>
+      <div class="cta"><a class="btn t" href="#menu">Order now</a><a class="btn o" href="#menu">See the menu</a></div>
+      <div class="info"><div><b>Open daily</b>10am to 10pm</div><div><b>Pickup</b>Ready in 20 minutes</div></div>
+    </div>
+    <div class="photo"><div class="stamp">made<br>from<br>scratch</div></div>
+  </header>
+</div>
+<section id="menu" style="background:var(--cream)"><div class="wrap">
+  <div class="mh"><div><div class="eyebrow">Today&#8217;s menu</div><h2 class="f" style="margin-top:12px">Pick your <em>bowl.</em></h2></div><a class="btn g sm" href="#menu">Full menu</a></div>
+  <div class="menu">
+    <div class="dish"><div class="ph" style="background-image:url(../img/sb-sinigang.jpg)"></div><div class="row"><h3>Sinigang na Hipon</h3><span class="pr">&#8369;280</span></div><p>Shrimp in a sour tamarind broth with greens.</p><div class="add" id="add0">Add to order<span class="y">Added &#10003;</span></div></div>
+    <div class="dish"><div class="ph" style="background-image:url(../img/sb-mami.jpg)"></div><div class="row"><h3>Beef Mami</h3><span class="pr">&#8369;190</span></div><p>Egg noodles, slow beef broth, soft egg.</p><div class="add">Add to order<span class="y">Added &#10003;</span></div></div>
+    <div class="dish"><div class="ph" style="background-image:url(../img/sb-noodle.jpg)"></div><div class="row"><h3>Spicy Seafood Noodles</h3><span class="pr">&#8369;240</span></div><p>Noodles, shrimp and greens in a chili broth.</p><div class="add">Add to order<span class="y">Added &#10003;</span></div></div>
+  </div>
+</div></section>
+<section id="story"><div class="wrap story"><div class="ph"></div><div><div class="eyebrow">Our story</div><h2 class="f" style="margin-top:12px">Simmered since <em>sunrise.</em></h2><p>Every broth starts before we open: bones, tamarind and patience. Come in, or let it come to you.</p></div></div></section>
+<footer><div class="wrap"><div><b>Sabaw &amp; Co.</b><br>Filipino soup house</div><div><b>Hours</b><br>Daily, 10am to 10pm</div><div><b>Say hi</b><br>hello@sabaw.example</div></div></footer>
+<div class="cart" id="cart"><span id="cartTx"><b>1 item</b> &#183; &#8369;280</span><div class="go" id="goOrder">Order now<span class="y">Order placed &#10003;</span></div></div>
+<script src="../sc.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+// showreel: added = 0..1, cart = 0..1 (bar slides in), done = 0..1 order placed
+window.act = (s) => {
+  if (s.live) return;
+  $('add0').querySelector('.y').style.transform = `translateY(${(1 - (s.added || 0)) * 100}%)`;
+  $('cart').classList.toggle('on', (s.cart || 0) > 0); $('cart').style.transform = `translateY(${(1 - (s.cart || 0)) * 160}%)`;
+  $('goOrder').querySelector('.y').style.transform = `translateY(${(1 - (s.done || 0)) * 100}%)`;
+  $('goOrder').style.transform = `scale(${1 - 0.05 * (s.press || 0)})`;
+};
+if (!VIDEO) {
+  let n = 0, sum = 0;
+  document.querySelectorAll('.dish').forEach((d) => d.querySelector('.add').addEventListener('click', () => {
+    d.querySelector('.add .y').style.transform = 'translateY(0)'; n++; sum += +d.querySelector('.pr').textContent.replace(/\D/g, '');
+    $('cartTx').innerHTML = `<b>${n} item${n > 1 ? 's' : ''}</b> &#183; &#8369;${sum}`; $('cart').classList.add('on'); $('cart').style.transform = 'translateY(0)';
+  }));
+  $('goOrder').addEventListener('click', () => ($('goOrder').querySelector('.y').style.transform = 'translateY(0)'));
+}
+</script>
+</body></html>
