@@ -151,7 +151,8 @@ html.wire .hcard::after,html.wire .ph::after,html.wire .map::after{content:'';po
   background:linear-gradient(to top right,transparent calc(50% - 1.5px),#D2D2CB calc(50% - 1px),#D2D2CB calc(50% + 1px),transparent calc(50% + 1.5px)),
              linear-gradient(to bottom right,transparent calc(50% - 1.5px),#D2D2CB calc(50% - 1px),#D2D2CB calc(50% + 1px),transparent calc(50% + 1.5px))}
 html.wire .hphoto,html.wire .map .m,html.wire .pin,html.wire .pinsh,html.wire .mlabel,html.wire .tag,html.wire .badge,html.wire .seal svg{visibility:hidden}
-html.wire .seal{border-radius:50%;outline:2px solid #D2D2CB}
+html.wire .seal{border-radius:50%;background:#F1F1ED;outline:2px solid #D2D2CB;outline-offset:-2px}
+html.wire .seal *{visibility:hidden}
 html.wire .tx{background:#E4E4DF;border-radius:6px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 html.wire .btn,html.wire .cart,html.wire .chips span,html.wire .add,html.wire .open,html.wire .burger{background:#F1F1ED !important;outline:2px solid #D2D2CB;outline-offset:-2px}
 html.wire .burger i{background:transparent;box-shadow:none}

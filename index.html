@@ -16,13 +16,13 @@ video.v{max-width:min(420px,100%);max-height:75vh}
 </style></head><body>
 <h1>northernware<b>.</b> From message to live website</h1>
 <div class="tabs"><button id="bl" class="on">Landscape</button><button id="bv">Vertical</button></div>
-<video id="vid" src="landscape.mp4?v=2" poster="landscape.jpg?v=2" controls playsinline preload="metadata"></video>
-<a class="dl" id="dl" href="landscape.mp4?v=2" download="northernware-showreel-landscape.mp4">Download landscape <small>1920&times;1080 &middot; 17 MB</small></a>
+<video id="vid" src="landscape.mp4?v=3" poster="landscape.jpg?v=3" controls playsinline preload="metadata"></video>
+<a class="dl" id="dl" href="landscape.mp4?v=3" download="northernware-showreel-landscape.mp4">Download landscape <small>1920&times;1080 &middot; 17 MB</small></a>
 <a class="site" href="second-cup/">Open the Second Cup website &#8599;</a>
 <div class="copy"><div id="ct">Every website starts with one message. Send yours, and a real person replies within one business day. Then we plan it, design it, build it, test it on every screen and take it live. Your turn.</div><button id="cb">Copy caption</button></div>
 <script>
-const set=(v)=>{const k=v?'vertical':'landscape';vid.src=k+".mp4?v=2";vid.poster=k+".jpg?v=2";vid.className=v?'v':'';
-dl.href=k+'.mp4?v=2';dl.download='northernware-showreel-'+k+'.mp4';dl.innerHTML='Download '+k+' <small>'+(v?'1080&times;1920':'1920&times;1080')+' &middot; 17 MB</small>';
+const set=(v)=>{const k=v?'vertical':'landscape';vid.src=k+".mp4?v=3";vid.poster=k+".jpg?v=3";vid.className=v?'v':'';
+dl.href=k+'.mp4?v=3';dl.download='northernware-showreel-'+k+'.mp4';dl.innerHTML='Download '+k+' <small>'+(v?'1080&times;1920':'1920&times;1080')+' &middot; 17 MB</small>';
 bl.className=v?'':'on';bv.className=v?'on':'';};
 bl.onclick=()=>set(0);bv.onclick=()=>set(1);
 cb.onclick=()=>navigator.clipboard.writeText(ct.textContent).then(()=>cb.textContent='Copied');
