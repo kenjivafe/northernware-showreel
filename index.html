@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Northernware showreel</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0A0A0A;color:#F4F4F0;font:16px system-ui,-apple-system,sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:24px 16px 40px;gap:18px}
+h1{font-size:20px;margin:0;letter-spacing:-.02em}h1 b{color:#FF3800}
+.tabs{display:flex;background:#1c1c1c;border-radius:999px;padding:4px}
+.tabs button{border:0;background:none;color:#B9B9B9;font:600 15px system-ui;padding:10px 20px;border-radius:999px;cursor:pointer}
+.tabs button.on{background:#F4F4F0;color:#0A0A0A}
+video{width:100%;max-width:960px;border-radius:12px;background:#000;display:block}
+video.v{max-width:min(420px,100%);max-height:75vh}
+.dl{display:inline-flex;align-items:center;gap:8px;background:#FF3800;color:#fff;text-decoration:none;font:700 16px system-ui;padding:14px 24px;border-radius:999px}
+.dl small{font-weight:500;opacity:.85}
+.copy{max-width:560px;background:#161616;border:1px solid #2a2a2a;border-radius:12px;padding:16px;color:#d8d8d4;line-height:1.5}
+.copy button{margin-top:10px;background:none;border:1px solid #444;color:#F4F4F0;border-radius:999px;padding:8px 14px;font:600 14px system-ui}
+</style></head><body>
+<h1>northernware<b>.</b> From message to live website</h1>
+<div class="tabs"><button id="bl" class="on">Landscape</button><button id="bv">Vertical</button></div>
+<video id="vid" src="landscape.mp4" poster="landscape.jpg" controls playsinline preload="metadata"></video>
+<a class="dl" id="dl" href="landscape.mp4" download="northernware-showreel-landscape.mp4">Download landscape <small>1920&times;1080 &middot; 17 MB</small></a>
+<div class="copy"><div id="ct">Every website starts with one message. Send yours, and a real person replies within one business day. Then we plan it, design it, build it, test it on every screen and take it live. Your turn.</div><button id="cb">Copy caption</button></div>
+<script>
+const set=(v)=>{const k=v?'vertical':'landscape';vid.src=k+'.mp4';vid.poster=k+'.jpg';vid.className=v?'v':'';
+dl.href=k+'.mp4';dl.download='northernware-showreel-'+k+'.mp4';dl.innerHTML='Download '+k+' <small>'+(v?'1080&times;1920':'1920&times;1080')+' &middot; 17 MB</small>';
+bl.className=v?'':'on';bv.className=v?'on':'';};
+bl.onclick=()=>set(0);bv.onclick=()=>set(1);
+cb.onclick=()=>navigator.clipboard.writeText(ct.textContent).then(()=>cb.textContent='Copied');
+</script></body></html>
