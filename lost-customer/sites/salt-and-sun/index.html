@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salt &amp; Sun · Beach resort in San Juan, La Union</title>
+<meta name="description" content="Sun, surf and slow mornings. Beachfront rooms in San Juan, La Union, booked in a minute.">
+<link rel="stylesheet" href="../fonts/fonts.css">
+<style>
+:root{--sea:#0F3B47;--sea2:#185563;--sand:#F5EEE4;--paper:#FBF8F3;--coral:#EF6A43;--glass:#BFE3DC;--ink:#14262B;--mut:#62737A;--line:rgba(20,38,43,.12)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.s{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-.01em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.nav{position:fixed;left:50%;top:22px;transform:translateX(-50%);width:min(1140px,calc(100% - 48px));z-index:10;display:flex;align-items:center;gap:26px;height:62px;padding:0 8px 0 22px;border-radius:999px;background:rgba(251,248,243,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 10px 30px -16px rgba(15,59,71,.45)}
+.brand{font-size:27px;font-style:italic}
+.brand b{font-style:normal;color:var(--coral)}
+.links{display:flex;gap:26px;margin-left:auto;font-weight:600;font-size:14.5px;color:var(--mut)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 24px;border-radius:999px;font-weight:700;font-size:15.5px;white-space:nowrap}
+.btn.c{background:var(--coral);color:#fff}
+.btn.d{background:var(--sea);color:#fff}
+.btn.sm{height:46px;padding:0 20px;font-size:14.5px}
+.hero{position:relative;height:760px;margin:12px;border-radius:32px;overflow:hidden;background:#1b2a30}
+.hero .ph{position:absolute;inset:0;background:url(../img/ss-hero.jpg) 50% 55%/cover;transform-origin:50% 60%}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,30,36,.85) 0%,rgba(10,30,36,.3) 45%,rgba(10,30,36,.05) 70%)}
+.hc{position:absolute;left:56px;right:56px;bottom:52px;z-index:2;color:#fff;display:flex;justify-content:space-between;align-items:flex-end;gap:40px}
+.ey{font-size:12.5px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--glass)}
+.h1{font-size:112px;line-height:.92;margin:16px 0 18px}
+.h1 em{color:#FFD9C8}
+.lead{font-size:18px;line-height:1.55;color:rgba(255,255,255,.85);max-width:420px}
+.quick{background:rgba(251,248,243,.95);color:var(--ink);border-radius:24px;padding:18px;width:360px;flex:none}
+.quick .row{display:flex;gap:8px;margin-bottom:12px}
+.quick .f{flex:1;border-radius:14px;padding:10px 14px;box-shadow:inset 0 0 0 1px var(--line)}
+.quick .f small{display:block;font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--mut);text-transform:uppercase}
+.quick .f b{font-size:16px}
+.quick .btn{width:100%}
+section{padding:90px 0}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:30px}
+.h2{font-size:72px;line-height:.95}
+.h2 em{color:var(--coral)}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.room{background:#fff;border-radius:28px;padding:10px;box-shadow:0 20px 44px -30px rgba(15,59,71,.5)}
+.room .img{height:320px;border-radius:20px;background:center/cover}
+.room .rb{display:flex;justify-content:space-between;align-items:center;padding:18px 12px 8px}
+.room h3{font-size:34px}
+.room p{font-size:14.5px;color:var(--mut);margin-top:2px}
+.room .pr{font-weight:800;font-size:19px;text-align:right}
+.room .pr small{display:block;font-weight:600;font-size:12px;color:var(--mut)}
+.room .sel{margin:8px 12px 10px;width:calc(100% - 24px)}
+.exp{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.exp div{height:280px;border-radius:24px;background:center/cover;position:relative;overflow:hidden}
+.exp div::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,30,36,.7),transparent 55%)}
+.exp span{position:absolute;left:20px;bottom:16px;z-index:2;color:#fff;font-family:'Instrument Serif',serif;font-size:32px}
+footer{background:var(--sea);color:#C8DADF;padding:50px 0;font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between}
+footer b{color:#fff}
+/* booking sheet */
+.veil{position:fixed;inset:0;background:rgba(10,30,36,.5);z-index:20;opacity:0;pointer-events:none}
+.sheet{position:fixed;left:50%;bottom:0;width:min(560px,100%);transform:translate(-50%,105%);z-index:21;background:var(--paper);border-radius:28px 28px 0 0;padding:14px 22px 28px;box-shadow:0 -20px 50px -20px rgba(0,0,0,.4)}
+.sheet:not(.open){visibility:hidden}
+.grab{width:44px;height:5px;border-radius:3px;background:#d8d2c8;margin:0 auto 14px}
+.sheet .t{display:flex;gap:14px;align-items:center}
+.sheet .t i{width:64px;height:64px;border-radius:16px;background:url(../img/ss-room.jpg) center/cover;flex:none}
+.sheet h4{font-family:'Instrument Serif',serif;font-weight:400;font-size:30px;line-height:1}
+.sheet .t p{font-size:13.5px;color:var(--mut);margin-top:4px}
+.cal{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:20px 0 14px}
+.cal span{border-radius:16px;padding:10px 0;text-align:center;font-size:12px;font-weight:700;color:var(--mut);box-shadow:inset 0 0 0 1px var(--line);text-transform:uppercase;letter-spacing:.06em}
+.cal span b{display:block;font-size:21px;color:var(--ink);letter-spacing:-.02em;margin-top:3px}
+.cal span.on{background:var(--sea);color:#9cc3cb;box-shadow:none}.cal span.on b{color:#fff}
+.tot{display:flex;justify-content:space-between;align-items:center;padding:12px 2px 16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--mut)}
+.tot b{color:var(--ink);font-size:20px}
+.book{width:100%;height:58px;border-radius:18px;background:var(--coral);color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;border:0}
+.done{position:absolute;inset:0;background:var(--paper);border-radius:28px 28px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;opacity:0;pointer-events:none}
+.done .ck{width:76px;height:76px;border-radius:50%;background:#2E9E6B;display:grid;place-items:center;margin-bottom:16px;box-shadow:0 14px 30px -12px rgba(46,158,107,.7)}
+.done h5{font-family:'Instrument Serif',serif;font-weight:400;font-size:40px;line-height:1}
+.done p{color:var(--mut);margin-top:8px;font-size:15px}
+@media (max-width:980px){.links{display:none}.h1{font-size:80px}.hc{flex-direction:column;align-items:flex-start}.quick{width:100%;max-width:420px}.rooms{grid-template-columns:1fr}}
+@media (max-width:560px){
+  .wrap{padding:0 16px}.nav{top:12px;height:56px;padding:0 6px 0 18px;width:calc(100% - 24px)}.brand{font-size:24px}
+  .hero{height:610px;margin:8px;border-radius:26px}.hc{left:20px;right:20px;bottom:20px;gap:18px}
+  .h1{font-size:56px;margin:10px 0 10px}.lead{font-size:15.5px}.quick{padding:14px;border-radius:20px}.quick .row{margin-bottom:10px}
+  section{padding:50px 0}.h2{font-size:46px}.sh{margin-bottom:20px}.room .img{height:210px}.room h3{font-size:28px}
+  .exp{grid-template-columns:1fr 1fr}.exp div{height:180px}.exp div:nth-child(3){display:none}.exp span{font-size:24px}
+  footer .wrap{flex-direction:column;gap:12px}
+}
+</style></head>
+<body>
+<nav class="nav"><a class="brand s" href="#">Salt <b>&amp;</b> Sun</a><div class="links"><a href="#rooms">Rooms</a><a href="#stay">Experiences</a><a href="#stay">Find us</a></div><a class="btn c sm" href="#rooms">Book</a></nav>
+<header class="hero"><div class="ph" id="hph"></div>
+  <div class="hc"><div><div class="ey">San Juan, La Union</div><h1 class="h1 s">Sun, surf &amp; <em>slow mornings.</em></h1><p class="lead">Beachfront rooms a few steps from the waves. Pick your dates and you&#8217;re booked in a minute.</p></div>
+    <div class="quick"><div class="row"><div class="f"><small>Check in</small><b>Sat, Oct 18</b></div><div class="f"><small>Guests</small><b>2 adults</b></div></div><a class="btn d" href="#rooms">Check availability</a></div></div>
+</header>
+<section id="rooms"><div class="wrap">
+  <div class="sh"><h2 class="h2 s">Stay <em>with us.</em></h2></div>
+  <div class="rooms">
+    <div class="room" id="room0"><div class="img" style="background-image:url(../img/ss-room.jpg)"></div><div class="rb"><div><h3 class="s">Ocean Room</h3><p>Sea view &#183; king bed &#183; breakfast</p></div><div class="pr">&#8369;4,800<small>per night</small></div></div><a class="btn d sel" id="sel0" href="#">Select</a></div>
+    <div class="room"><div class="img" style="background-image:url(../img/ss-cottage.jpg)"></div><div class="rb"><div><h3 class="s">Garden Cottage</h3><p>Shaded porch &#183; sleeps 4</p></div><div class="pr">&#8369;3,600<small>per night</small></div></div><a class="btn d sel" href="#">Select</a></div>
+  </div>
+</div></section>
+<section id="stay" style="padding-top:10px"><div class="wrap"><div class="exp">
+  <div style="background-image:url(../img/ss-surf.jpg)"><span>Surf lessons</span></div><div style="background-image:url(../img/ss-sunset.jpg)"><span>Sunset walks</span></div><div style="background-image:url(../img/ss-pool.jpg)"><span>The pool</span></div>
+</div></div></section>
+<footer><div class="wrap"><div><b>Salt &amp; Sun</b><br>San Juan, La Union</div><div><b>Check in</b><br>2pm &#183; Check out 12nn</div><div><b>Say hi</b><br>hello@saltandsun.example</div></div></footer>
+<div class="veil" id="veil"></div>
+<div class="sheet" id="sheet"><div class="grab"></div>
+  <div class="t"><i></i><div><h4>Ocean Room</h4><p>Sea view &#183; king bed &#183; 2 adults</p></div></div>
+  <div class="cal" id="cal"><span>Thu<b>16</b></span><span>Fri<b>17</b></span><span id="d18">Sat<b>18</b></span><span id="d19">Sun<b>19</b></span><span>Mon<b>20</b></span></div>
+  <div class="tot"><span id="nights">Pick your dates</span><b id="sum">&#8212;</b></div>
+  <button class="book" id="bookNow">Book now</button>
+  <div class="done" id="done"><div class="ck"><svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg></div><h5>Booked! See you Saturday.</h5><p>Ocean Room &#183; Sat 18 &#8211; Sun 19 &#183; 2 adults</p></div>
+</div>
+<script src="../sc.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+function paint(sheet, sel, done, press) {
+  $('veil').style.opacity = sheet * 0.9; $('veil').style.pointerEvents = sheet > 0.5 ? 'auto' : 'none';
+  $('sheet').style.transform = `translate(-50%,${(1 - sheet) * 105}%)`;
+  $('sheet').classList.toggle('open', sheet > 0);
+  $('d18').className = sel >= 1 ? 'on' : ''; $('d19').className = sel >= 2 ? 'on' : '';
+  $('nights').textContent = sel >= 2 ? 'Sat 18 – Sun 19 · 1 night' : sel === 1 ? 'Sat 18 – …' : 'Pick your dates';
+  $('sum').innerHTML = sel >= 2 ? '&#8369;4,800' : '&#8212;';
+  $('done').style.opacity = done; $('done').style.transform = `scale(${0.96 + 0.04 * done})`;
+  $('bookNow').style.transform = `scale(${1 - 0.04 * (press || 0)})`;
+}
+// showreel: scroll, sheet 0..1, sel = dates picked (0-2), done 0..1, press, hero = 0..1 photo settle
+window.act = (s) => {
+  if (s.live) return;
+  paint(s.sheet || 0, s.sel || 0, s.done || 0, s.press);
+  $('hph').style.transform = `scale(${1 + 0.12 * (1 - (s.hero ?? 1))})`;
+  $('sel0').style.transform = `scale(${1 - 0.05 * (s.selPress || 0)})`;
+};
+if (!VIDEO) {
+  let sel = 0;
+  document.querySelectorAll('.sel').forEach((b) => b.addEventListener('click', (e) => { e.preventDefault(); sel = 0; paint(1, 0, 0); }));
+  $('veil').addEventListener('click', () => paint(0, sel, 0));
+  [$('d18'), $('d19')].forEach((d, i) => d.addEventListener('click', () => { sel = Math.max(sel, i + 1); paint(1, sel, 0); }));
+  $('bookNow').addEventListener('click', () => { if (sel < 2) sel = 2; paint(1, sel, 1); });
+} else SC.set({});
+</script>
+</body></html>

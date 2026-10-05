@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Search</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:#fff;color:#1f1f1f;-webkit-font-smoothing:antialiased;overflow:hidden}
+.top{padding:14px 16px 10px}
+.logo{font:800 26px Inter;letter-spacing:-.04em;margin:6px 0 14px;text-align:center;color:#222}
+.logo b{color:#FF7A1A}
+.bar{height:52px;border-radius:26px;box-shadow:0 2px 10px rgba(0,0,0,.12),0 0 0 1px rgba(0,0,0,.06);display:flex;align-items:center;gap:12px;padding:0 18px;font-size:17px}
+.bar svg{width:20px;height:20px;flex:none}
+.car{display:inline-block;width:2px;height:20px;background:#1a73e8;vertical-align:-4px;margin-left:1px}
+.ph{color:#999}
+.tabs{display:flex;gap:22px;padding:14px 18px 0;font-size:14px;color:#666;border-bottom:1px solid #eee}
+.tabs span{padding-bottom:10px}.tabs span.on{color:#1a73e8;border-bottom:3px solid #1a73e8;font-weight:600}
+.res{padding:6px 16px}
+.r{position:relative;padding:14px 12px;margin:0 -12px;border-radius:14px}
+.r .src{display:flex;align-items:center;gap:10px;font-size:13px;color:#444}
+.r .src i{width:28px;height:28px;border-radius:50%;flex:none;display:grid;place-items:center;font:700 13px Inter;color:#fff}
+.r h3{font-size:19px;color:#1a0dab;font-weight:500;margin:7px 0 4px;line-height:1.25}
+.r p{font-size:14px;color:#4d5156;line-height:1.45}
+.r .meta{font-size:13px;color:#70757a;margin-top:6px}
+.r .meta b{color:#e8710a}
+.r .hl{position:absolute;inset:0;border-radius:14px;background:rgba(26,115,232,.1);opacity:0}
+.sep{height:1px;background:#eee;margin:0}
+</style></head>
+<body>
+<div class="top"><div class="logo">search<b>.</b></div>
+  <div class="bar"><svg viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2.2"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><span id="q"></span><span class="car" id="car"></span><span class="ph" id="ph">Search</span></div></div>
+<div class="tabs" id="tabs"><span class="on">All</span><span>Maps</span><span>Images</span><span>Hotels</span></div>
+<div class="res" id="res">
+  <div class="r" id="r0"><div class="hl"></div><div class="src"><i style="background:#2E7D74">S</i><div>Salt &amp; Sun<br><span style="color:#777">San Juan, La Union</span></div></div>
+    <h3>Salt &amp; Sun Beach Resort | Official Website</h3><p>Beachfront rooms steps from the surf. Book your weekend in San Juan, La Union.</p></div>
+  <div class="sep"></div>
+  <div class="r" id="r1"><div class="hl"></div><div class="src"><i style="background:#3b5bdb">C</i><div>Coastline Resort<br><span style="color:#777">San Juan, La Union</span></div></div>
+    <h3>Coastline Resort &#8211; Book Direct, Best Rates</h3><p>Pool villas and ocean-view rooms. Instant booking, free cancellation.</p></div>
+  <div class="sep"></div>
+  <div class="r" id="r2"><div class="hl"></div><div class="src"><i style="background:#c2410c">T</i><div>Tide Pool Inn<br><span style="color:#777">Urbiztondo, La Union</span></div></div>
+    <h3>Tide Pool Inn &#8211; Surf Camp &amp; Rooms</h3><p>Surf lessons and budget rooms by the beach.</p></div>
+</div>
+<script src="sc.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const Q = 'beach resort la union';
+// showreel: q = typing 0..1, res = results appear (seconds since), tap = index pressed, press = 0..1
+window.act = (s) => {
+  if (s.live) return;
+  const k = s.q ?? 1, n = Math.round(Q.length * Math.min(1, k));
+  $('q').textContent = Q.slice(0, n); $('ph').style.display = n ? 'none' : '';
+  $('car').style.opacity = k < 1 || Math.floor((s.t || 0) * 2.4) % 2 === 0 ? 1 : 0;
+  ['r0', 'r1', 'r2'].forEach((id, i) => {
+    const e = $(id), a = s.res == null ? 1 : spring(s.res - i * 0.09, 2.6, 0.7);
+    e.style.opacity = cl(a * 1.4); e.style.transform = `translateY(${(1 - cl(a, 0, 1.1)) * 30}px)`;
+    e.querySelector('.hl').style.opacity = s.tap === i ? (s.press || 0) : 0;
+  });
+  document.querySelectorAll('.sep').forEach((e) => (e.style.opacity = s.res == null ? 1 : cl(s.res * 3)));
+};
+if (VIDEO) SC.set({});
+</script>
+</body></html>

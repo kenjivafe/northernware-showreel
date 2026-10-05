@@ -1,0 +1,58 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>SALT &amp; SUN BEACH RESORT - Welcome</title>
+<style>
+body{margin:0;background:#E8F4FF;font-family:Arial,Helvetica,sans-serif;color:#222}
+.page{width:1000px;margin:0 auto;background:#fff;border-left:1px solid #9cc;border-right:1px solid #9cc}
+.head{height:120px;background:linear-gradient(#006699,#33AACC);position:relative;padding:18px 24px}
+.head h1{font-family:'Brush Script MT','Comic Sans MS',cursive;font-size:56px;color:#FFFF66;margin:0;text-shadow:3px 3px 0 #003355;font-weight:normal}
+.head p{color:#fff;font-style:italic;margin:2px 0 0 6px;font-size:15px}
+.nav{background:#FF9933;padding:8px 0;text-align:center}
+.nav a{color:#fff;font-weight:bold;font-size:13px;margin:0 12px;text-decoration:underline}
+.slide{height:300px;background:#000 center/cover;image-rendering:pixelated;position:relative}
+.slide span{position:absolute;bottom:10px;left:0;right:0;text-align:center;color:#fff;font:bold 20px Arial;text-shadow:2px 2px 0 #000}
+.cols{display:flex}
+.main{flex:1;padding:16px 22px;font-size:13px;line-height:1.5}
+.main h2{color:#006699;font-size:22px;margin:0 0 8px;font-family:Georgia,serif}
+.side{width:260px;background:#FFF5DD;padding:16px;font-size:12.5px;border-left:2px dotted #FF9933}
+.side h3{margin:0 0 6px;color:#CC3300;font-size:15px}
+.rates{border:2px dashed #CC3300;padding:10px;background:#fff;margin-top:12px;font-size:13px}
+.rates b{color:#CC3300}
+.room{float:left;width:200px;height:120px;margin:0 14px 8px 0;background:center/cover;image-rendering:pixelated;border:3px solid #33AACC}
+.foot{background:#006699;color:#cde;font-size:11px;text-align:center;padding:10px}
+.fb{position:fixed;left:50%;top:50%;width:620px;margin-left:-310px;margin-top:-170px;background:#fff;border:4px solid #3B5998;box-shadow:0 0 0 2000px rgba(0,0,0,.55);text-align:center;padding:26px 20px;z-index:9;display:none}
+.fb h2{color:#3B5998;font-size:34px;margin:0 0 10px}
+.fb .lk{display:inline-block;background:#3B5998;color:#fff;font-weight:bold;font-size:22px;padding:12px 28px;border-radius:4px;margin-top:10px}
+.fb .x{position:absolute;right:8px;top:4px;font:bold 20px Arial;color:#999;width:24px;height:24px}
+.ld{position:fixed;inset:0;background:#fff;z-index:20;display:none}
+</style></head>
+<body>
+<div class="page">
+  <div class="head"><h1>Salt &amp; Sun Beach Resort</h1><p>~ Your Home Away From Home in San Juan, La Union!! ~</p></div>
+  <div class="nav"><a href="#">HOME</a><a href="#">ROOMS</a><a href="#">GALLERY</a><a href="#">LOCATION</a><a href="#">CONTACT US</a><a href="#">LINKS</a></div>
+  <div class="slide" id="slide" style="background-image:url(../img/old-beach-s.jpg)"><span id="cap">Welcome to Salt &amp; Sun!!! (1 of 24)</span></div>
+  <div class="cols">
+    <div class="main"><h2>Welcome to our Website!</h2>
+      <div class="room" style="background-image:url(../img/old-room-s.jpg)"></div>
+      Salt &amp; Sun Beach Resort is located in San Juan, La Union, the surfing capital of the north. We offer air-conditioned rooms, cottages and a swimming pool. Perfect for family outings, team buildings, birthdays and other occasions. Surfing lessons available upon request. Pets not allowed. Corkage fee applies.<br><br>
+      For reservations kindly send us a private message on our Facebook page and wait for our reply. Thank you and God bless!!!</div>
+    <div class="side"><h3>&#9733; ANNOUNCEMENT &#9733;</h3>We are now OPEN!! Walk-ins welcome subject to availability.
+      <div class="rates" id="rates"><b>ROOM RATES:</b><br>Please PM us on our Facebook page for rates and availability. Rates may change without prior notice.</div>
+      <br>Visitors: 008341</div>
+  </div>
+  <div class="foot">Copyright 2012 Salt &amp; Sun Beach Resort. All Rights Reserved. Website designed by: JM</div>
+</div>
+<div class="fb" id="fb"><span class="x">&#10005;</span><h2>LIKE US ON FACEBOOK!!!</h2><div>for promos, updates and room rates</div><div class="lk">&#128077; Like Page</div></div>
+<div class="ld" id="ld"></div>
+<script src="../sc.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+// showreel: load = 0..1 (blank page until loaded), popup = 0..1, slide = slideshow frame
+window.act = (s) => {
+  if (s.live) return;
+  $('ld').style.display = (s.load ?? 1) < 1 ? 'block' : 'none';
+  const p = s.popup || 0; $('fb').style.display = p > 0 ? 'block' : 'none';
+  $('fb').style.opacity = p; $('fb').style.transform = `scale(${0.9 + 0.1 * p})`;
+};
+if (VIDEO) SC.set({});
+</script>
+</body></html>
