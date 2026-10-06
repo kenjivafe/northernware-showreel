@@ -17,13 +17,13 @@ video.v{max-width:min(420px,100%);max-height:75vh}
 </style></head><body>
 <h1>northernware<b>.</b> The lost customer</h1>
 <div class="tabs"><button id="bl" class="on">Landscape</button><button id="bv">Vertical</button></div>
-<video id="vid" src="landscape.mp4?v=1" poster="landscape.jpg?v=1" controls playsinline preload="metadata"></video>
-<a class="dl" id="dl" href="landscape.mp4?v=1" download="northernware-showreel-landscape.mp4">Download landscape <small>1920&times;1080 &middot; 17 MB</small></a>
+<video id="vid" src="landscape.mp4?v=2" poster="landscape.jpg?v=2" controls playsinline preload="metadata"></video>
+<a class="dl" id="dl" href="landscape.mp4?v=2" download="northernware-showreel-landscape.mp4">Download landscape <small>1920&times;1080 &middot; 17 MB</small></a>
 <div class="sites"><a class="site" href="sites/salt-and-sun/">Salt &amp; Sun (new site) &#8599;</a> <a class="site" href="sites/salt-and-sun/before.html">Salt &amp; Sun (old site) &#8599;</a></div>
 <div class="copy"><div id="ct">They were ready to book. Your website was slow, tiny on their phone, and said "PM us for rates." So they booked somewhere else, and you'll never even know. Don't lose the next one. Message us.</div><button id="cb">Copy caption</button></div>
 <script>
-const set=(v)=>{const k=v?'vertical':'landscape';vid.src=k+".mp4?v=1";vid.poster=k+".jpg?v=1";vid.className=v?'v':'';
-dl.href=k+'.mp4?v=1';dl.download='northernware-showreel-'+k+'.mp4';dl.innerHTML='Download '+k+' <small>'+(v?'1080&times;1920':'1920&times;1080')+' &middot; 17 MB</small>';
+const set=(v)=>{const k=v?'vertical':'landscape';vid.src=k+".mp4?v=2";vid.poster=k+".jpg?v=2";vid.className=v?'v':'';
+dl.href=k+'.mp4?v=2';dl.download='northernware-showreel-'+k+'.mp4';dl.innerHTML='Download '+k+' <small>'+(v?'1080&times;1920':'1920&times;1080')+' &middot; 17 MB</small>';
 bl.className=v?'':'on';bv.className=v?'on':'';};
 bl.onclick=()=>set(0);bv.onclick=()=>set(1);
 cb.onclick=()=>navigator.clipboard.writeText(ct.textContent).then(()=>cb.textContent='Copied');
